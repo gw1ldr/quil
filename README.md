@@ -1,5 +1,7 @@
 # quil, a meditation journal
 
+https://github.com/user-attachments/assets/27cf0a3e-bcbb-4990-a8b0-83c86afb410d
+
 **<a href="https://www.quilmind.com">quilmind.com</a> is a meditation app with the following features:**
 
 * A meditation timer with soothing sounds and SCSS animations
