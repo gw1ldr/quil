@@ -1,0 +1,65 @@
+/* Color Variables */
+$primary-color: #721bac;
+$secondary-color: #2f3c7e;
+$shadow-color: rgb(172, 172, 172);
+
+/* Font Families */
+$paragraph-font: 'Poppins', sans-serif;
+$header-font: 'Neucha', 'Poppins', sans-serif;
+
+/* Main page container */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  color: black;
+  max-width: 900px;
+  font-family: $paragraph-font;
+  line-height: 2em;
+  font-size: large;
+  color: rgb(46, 46, 46);
+  padding: 3em 3em 10em 3em;
+
+  @media (max-width: 800px) {
+    padding: 2em 2em 10em 2em;
+  }
+
+  @media (max-width: 300px) {
+    padding: 1em 1em 10em 1em;
+  }
+
+  .page-text {
+    padding: 0 0 1em 0;
+    width: 100%;
+    @media (max-width: 800px) {
+      padding: 0.5em;
+    }
+  }
+
+  // Headers
+  h2 {
+    font-family: $header-font;
+    font-size: 2.5rem;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin: 0;
+    padding: 0.5em 0.5em 0.5em 0;
+    color: $secondary-color;
+    text-shadow: 1px 1px 5px lightgray;
+  }
+
+  .responsive-video {
+    width: 100%;
+    height: auto;
+    padding: 2em 0 0 0;
+    max-width: 100%;
+    display: block;
+  }
+
+  // Bold paragraph text
+  .purple {
+    color: $primary-color;
+    font-weight: bold;
+  }
+}

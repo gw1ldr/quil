@@ -1,0 +1,42 @@
+$paragraph-font: 'Poppins', sans-serif;
+$shadow-color: rgb(172, 172, 172);
+
+/* Box Shadow Mixin */
+@mixin box-shadow($offset-x, $offset-y, $blur, $color) {
+  box-shadow: $offset-x $offset-y $blur $color;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  background-color: rgb(233, 232, 232);
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  margin: 0 auto;
+  @include box-shadow(0, 2px, 8px, $shadow-color);
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    width: 95%;
+    font-family: $paragraph-font;
+    color: rgb(60, 60, 60);
+    @media (max-width: 300px) {
+      padding: 0.3em;
+      width: 95%;
+    }
+  }
+
+  .credits,
+  .copyright {
+    font-size: small;
+    padding: 0.5em;
+  }
+}

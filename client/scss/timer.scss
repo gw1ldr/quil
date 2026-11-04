@@ -1,0 +1,268 @@
+/* Color Variables */
+$primary-color: #721bac;
+$secondary-color: #2f3c7e;
+$quote-color: rgb(74, 74, 74);
+$shadow-color: rgb(172, 172, 172);
+
+/* Timer button variables */
+$circle-param: 200px;
+$circle-button-param: 55px;
+$button-color: lighten($secondary-color, 50%);
+$button-color-active: lighten($primary-color, 50%);
+$button-text-color: darken($secondary-color, 10%);
+
+/* Font Families */
+$paragraph-font: 'Poppins', sans-serif;
+$header-font: 'Neucha', 'Poppins', sans-serif;
+
+/* Styles for parent component */
+.timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding-top: 1em;
+  font-family: $header-font;
+  letter-spacing: 0.2em;
+  font-size: largest;
+  color: white;
+}
+
+/* Styles for meditation timer circle */
+.timer-circle {
+  height: $circle-param;
+  width: $circle-param;
+  border-radius: 50%;
+  background-color: $primary-color;
+  line-height: $circle-param;
+  text-align: center;
+  font-size: larger;
+  vertical-align: middle;
+  color: white;
+}
+
+/* Grow animation for the meditation timer circle */
+.timer-circle-grow {
+  border-radius: 43% 57% 48% 52% / 47% 43% 57% 53%;
+  animation:
+    grow 7s ease infinite,
+    wobble 7s linear infinite;
+}
+
+@keyframes grow {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  48% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  52% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/* Wobble animation for the meditation timer circle */
+@keyframes wobble {
+  0% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+  10% {
+    border-radius: 45% 55% 50% 50% / 50% 50% 50% 50%;
+  }
+  25% {
+    border-radius: 55% 45% 50% 50% / 50% 50% 50% 50%;
+  }
+  40% {
+    border-radius: 50% 50% 55% 45% / 55% 45% 50% 50%;
+  }
+  55% {
+    border-radius: 48% 52% 47% 53% / 50% 50% 50% 50%;
+  }
+  70% {
+    border-radius: 52% 48% 50% 50% / 50% 50% 50% 50%;
+  }
+  90% {
+    border-radius: 50% 50% 52% 48% / 52% 48% 50% 50%;
+  }
+  100% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+}
+
+/* Font size and styling for the countdown text inside the timer circle */
+.time {
+  font-size: 3rem;
+  padding: 1rem;
+}
+
+/* Font size and styling for the "Let's Begin" quote */
+.quote {
+  font-family: $header-font;
+  letter-spacing: normal;
+  color: $quote-color;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: $secondary-color;
+  font-family: $paragraph-font;
+  margin: 0.5em;
+  padding: 0.5em;
+  border-radius: 1em;
+  border: 5px solid $button-color;
+  box-shadow: 0px 4px 16px 0 rgba(134, 134, 134, 0.5);
+}
+
+.control-panel > div {
+  flex: 1;
+  /* You can add additional styling if needed */
+}
+
+.top-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Styles for the Countdown and Duration dropdowns */
+.control-panel > .duration-container {
+  flex: 2;
+  padding: 0.2em;
+  font-size: large;
+}
+
+.duration-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2em;
+  .duration-input {
+    font-family: $paragraph-font;
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.5rem;
+    color: rgb(59, 59, 59);
+    width: 10em;
+    font-size: medium;
+    margin: 0.2em;
+  }
+}
+
+/* Styles for the timer buttons */
+.circle-button-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0.2em;
+  /* Mixin for button hover style */
+  @mixin btn-hover {
+    background-color: lighten($primary-color, 50%);
+    border: 1px solid lighten($primary-color, 50%);
+    width: $circle-button-param;
+    height: $circle-button-param;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  /* Play/Pause and Reset button styles */
+  .circle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $paragraph-font;
+    font-size: medium;
+    height: $circle-button-param;
+    width: $circle-button-param;
+    background-color: $button-color;
+    border: 1px solid $button-color;
+    border-radius: 50%;
+    color: $button-text-color;
+    margin: 0.3em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      @include btn-hover;
+    }
+    // Changes color of play/pause button once selected
+    &.button-primary-active {
+      background-color: $button-color-active;
+      border: 1px solid $button-color-active;
+      color: $button-text-color;
+      width: $circle-button-param;
+      height: $circle-button-param;
+    }
+
+    &.button-primary-inactive {
+      background-color: $button-color;
+      border: 1px solid $button-color;
+      color: $button-text-color;
+      width: $circle-button-param;
+      height: $circle-button-param;
+      &:hover {
+        @include btn-hover;
+      }
+    }
+  }
+
+  #play-pause-btn {
+    width: 15px;
+    height: 20px;
+  }
+
+  #reset-btn {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.bottom-row {
+  padding: 0.2em;
+}
+
+.audio-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .high {
+    width: 14px;
+    height: 22px;
+    padding: 5px 20px;
+  }
+
+  .low {
+    width: 28px;
+    height: 22px;
+    padding: 5px 20px;
+  }
+}

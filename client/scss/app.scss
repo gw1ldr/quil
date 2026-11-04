@@ -1,0 +1,46 @@
+$primary-color: #721bac;
+$secondary-color: #2f3c7e;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.app-container {
+  position: absolute;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+/* Styles links */
+a {
+  color: $secondary-color;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $primary-color;
+  text-decoration: underline;
+}
+
+ol,
+ul {
+  padding-left: 15px;
+}
+
+/* Styles ordered and unordered list bullets */
+ol li,
+ul li {
+  position: relative;
+  padding: 0 0 15px 15px;
+}
+
+ul li::marker {
+  content: '\25CF';
+  color: $primary-color;
+}
+
+ol li::marker {
+  color: $primary-color;
+}
